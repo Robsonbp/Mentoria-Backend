@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn
-from routes import lista
+from routes import pessoas
 
 app = FastAPI(title="Backend Mentoria")
 
@@ -17,7 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(lista.router)
+app.include_router(pessoas.router)
 
 
 if __name__ == '__main__':
